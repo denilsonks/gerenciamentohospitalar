@@ -14,6 +14,9 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary>
       <App />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+      </ThemeProvider>
     </ErrorBoundary>
   </StrictMode>,
 )
