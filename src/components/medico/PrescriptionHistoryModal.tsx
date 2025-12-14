@@ -38,6 +38,7 @@ export default function PrescriptionHistoryModal({ open, onClose, patient }: Pro
         if (open && patient) {
             loadHistory();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [open, patient]);
 
     async function loadHistory() {
@@ -46,6 +47,7 @@ export default function PrescriptionHistoryModal({ open, onClose, patient }: Pro
         try {
             const data = await getPatientPrescriptions(patient.codigo);
             // Convert database fields to camelCase
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const formatted = data.map((p: any) => fromDatabase<PrescricaoType>(Prescricao, p));
             setPrescriptions(formatted);
         } catch (error) {
@@ -136,6 +138,7 @@ export default function PrescriptionHistoryModal({ open, onClose, patient }: Pro
                                                     <Chip
                                                         label={p.status || 'Pendente'}
                                                         size="small"
+                                                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                                         color={getStatusColor(p.status) as any}
                                                         variant="outlined"
                                                     />

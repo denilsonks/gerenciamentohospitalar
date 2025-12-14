@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
+
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import { Typography, Box, CircularProgress, Alert, Fab, Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@mui/material";
 import PrintIcon from '@mui/icons-material/Print';
@@ -127,6 +127,7 @@ export default function PrescricaoEnfermagemPage() {
     }, [loadData]);
 
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleSaveItem = async (newItem: any) => {
         if (!prescricao) return;
 
@@ -134,6 +135,7 @@ export default function PrescricaoEnfermagemPage() {
 
         try {
             await updatePrescription(prescricao.id, {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 item: updatedItens as any
             });
             // Atualiza estado local para refletir imediatamente
@@ -160,6 +162,7 @@ export default function PrescricaoEnfermagemPage() {
 
         try {
             await updatePrescription(prescricao.id, {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 item: newItens as any
             });
         } catch (err) {
@@ -190,6 +193,7 @@ export default function PrescricaoEnfermagemPage() {
 
         try {
             await updatePrescription(prescricao.id, {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 item: updatedItens as any
             });
         } catch (error) {

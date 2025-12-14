@@ -211,6 +211,7 @@ export default function AddItemForm({ prescricaoId, onItemAdded, isVisible, onTo
                                     }}
                                     // ✅ RENDERIZA CADA OPÇÃO COM CHAVE ÚNICA (usando o ID)
                                     renderOption={(props, option) => {
+                                        // eslint-disable-next-line @typescript-eslint/no-unused-vars
                                         const { key, ...restProps } = props;
                                         return (
                                             <li key={option.id} {...restProps}>

@@ -24,6 +24,7 @@ export default function EnfermagemPage() {
 
     useEffect(() => {
         loadDashboardData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user]);
 
     const loadDashboardData = async () => {

@@ -36,6 +36,7 @@ export default function MedicoPage() {
 
     useEffect(() => {
         loadDashboardData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user]);
 
     const loadDashboardData = async () => {

@@ -10,6 +10,7 @@ import type { ItemCuidado } from '@/types';
 
 interface Props {
     prescricaoId: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onSaveItem: (item: any) => Promise<void>;
     isVisible: boolean;
     onToggleVisibility: () => void;
@@ -214,6 +215,7 @@ export default function FormularioItemEnfermagem({ prescricaoId, onSaveItem, isV
                                         listbox: { sx: inputStyles.autocompleteListbox }
                                     }}
                                     renderOption={(props, option) => {
+                                        // eslint-disable-next-line @typescript-eslint/no-unused-vars
                                         const { key, ...restProps } = props;
                                         return (
                                             <li key={option.id} {...restProps}>

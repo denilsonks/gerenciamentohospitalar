@@ -78,7 +78,7 @@ export async function getHospitalizedPatients(): Promise<PatientListItem[]> {
     const mapPrescricoesHoje: Record<string, boolean> = {};
 
     if (internacaoIds.length > 0) {
-        const { data: prescricoesData, error: prescricoesError } = await supabase
+        const { data: prescricoesData } = await supabase
             .from(PrescricaoEnfermagem.table)
             .select(`${PrescricaoEnfermagem.fields.internacao}, ${PrescricaoEnfermagem.fields.dataPrescricao}, ${PrescricaoEnfermagem.fields.createdAt}`)
             .in(PrescricaoEnfermagem.fields.internacao, internacaoIds)

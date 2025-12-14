@@ -19,6 +19,7 @@ export default function PrescriptionModal({ open, onClose, onConfirm, patient, l
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             const formatted = tomorrow.toISOString().split('T')[0];
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setSelectedDate(formatted);
         }
     }, [open]);

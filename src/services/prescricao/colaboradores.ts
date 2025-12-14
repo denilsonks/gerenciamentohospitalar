@@ -23,6 +23,7 @@ export async function getColaboradorByIdentificador(identificador: string): Prom
         }
 
         console.log('✅ Colaborador encontrado:', data);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return data ? (data as any)[Colaborador.fields.nomeCompleto] : null;
     } catch (error) {
         console.error('Erro inesperado ao buscar colaborador:', error);

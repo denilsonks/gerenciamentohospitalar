@@ -51,7 +51,8 @@ export function UserRegistrationForm({ onSuccess }: UserRegistrationFormProps) {
         try {
             setLoading(true);
 
-            const { confirmPassword, ...userData } = formData;
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const { confirmPassword: _, ...userData } = formData;
             await createUser(userData);
 
             setSuccess(true);
@@ -72,6 +73,7 @@ export function UserRegistrationForm({ onSuccess }: UserRegistrationFormProps) {
             }
 
             setTimeout(() => setSuccess(false), 5000);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
             console.error('Erro ao criar usuário:', err);
             setError(err.message || 'Erro ao criar usuário. Tente novamente.');
@@ -176,6 +178,7 @@ export function UserRegistrationForm({ onSuccess }: UserRegistrationFormProps) {
                         select
                         label="Função"
                         value={formData.funcao}
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         onChange={(e) => setFormData({ ...formData, funcao: e.target.value as any })}
                         required
                         fullWidth

@@ -65,7 +65,11 @@ export default function CareSelectionModal({ open, onClose, onAddItems, allCares
 
     const handleToggleItem = (id: string) => {
         const newSelected = new Set(selectedItems);
-        newSelected.has(id) ? newSelected.delete(id) : newSelected.add(id);
+        if (newSelected.has(id)) {
+            newSelected.delete(id);
+        } else {
+            newSelected.add(id);
+        }
         setSelectedItems(newSelected);
     };
 

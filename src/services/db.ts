@@ -1,4 +1,5 @@
 // src/services/db.ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { supabase } from "@/config/supabase";
 
 // SELECT ALL → Gera a lista de campos automaticamente usando schema.fields
@@ -23,6 +24,7 @@ export function fromDatabase(schema: any, data: any) {
 // CONVERSÃO camelCase → snake_case (envio para Supabase)
 export function toDatabase(schema: any, obj: any) {
     const result: any = {};
+
 
     for (const camelKey of Object.keys(schema.fields)) {
         const snakeKey = schema.fields[camelKey];

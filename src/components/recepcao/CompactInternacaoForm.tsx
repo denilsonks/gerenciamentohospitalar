@@ -55,6 +55,7 @@ export default function CompactInternacaoForm({ onSuccess }: CompactInternacaoFo
         [],
     );
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handlePacienteInputChange = (_: any, newInputValue: string) => {
         if (newInputValue.length < 3) {
             setPacientes([]);

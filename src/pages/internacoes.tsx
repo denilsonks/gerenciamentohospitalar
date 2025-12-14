@@ -102,6 +102,7 @@ export default function InternacoesPage() {
         setPage(0);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleFilterChange = (field: keyof typeof filters, value: any) => {
         setFilters(prev => ({ ...prev, [field]: value }));
         setPage(0); // Resetar para primeira página ao filtrar

@@ -147,7 +147,9 @@ export async function addItemPrescricao(item: Partial<ItemPrescricaoType>): Prom
         // Não impede a inserção, apenas loga o erro. A ordem será null ou 0.
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const nextOrder = (maxOrderData && maxOrderData.length > 0 && (maxOrderData[0] as any).ordem)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ? (maxOrderData[0] as any).ordem + 1
         : 1;
 

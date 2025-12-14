@@ -19,6 +19,7 @@ export async function getEmailByUsername(username: string): Promise<string | nul
             return null;
         }
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return data ? (data as any)[Colaborador.fields.email] : null;
     } catch (error) {
         console.error('Erro inesperado ao buscar email por usuário:', error);

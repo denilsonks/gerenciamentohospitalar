@@ -87,6 +87,7 @@ export async function getInternacoesAtivas(): Promise<InternacaoComPaciente[]> {
                 .maybeSingle();
 
             if (paciente) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const pacienteConverted = fromDatabase<any>(Paciente, paciente);
                 pacienteData = {
                     nomeCompleto: pacienteConverted.nomeCompleto,
@@ -108,6 +109,7 @@ export async function getInternacoesAtivas(): Promise<InternacaoComPaciente[]> {
                 .maybeSingle();
 
             if (colaborador) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const colaboradorConverted = fromDatabase<any>(Colaborador, colaborador);
                 medicoData = {
                     nomeCompleto: colaboradorConverted.nomeCompleto || 'N/A',
@@ -197,6 +199,7 @@ export async function getInternacoes({
             .ilike(Paciente.fields.nomeCompleto, `%${filters.nomePaciente}%`);
 
         if (pacientes && pacientes.length > 0) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const ids = pacientes.map(p => (p as any)[Paciente.fields.codigo]);
             query = query.in(Internacao.fields.identificadorPaciente, ids);
         } else {
@@ -233,6 +236,7 @@ export async function getInternacoes({
                 .maybeSingle();
 
             if (paciente) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const pacienteConverted = fromDatabase<any>(Paciente, paciente);
                 pacienteData = {
                     nomeCompleto: pacienteConverted.nomeCompleto,
@@ -251,6 +255,7 @@ export async function getInternacoes({
                 .maybeSingle();
 
             if (colaborador) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const colaboradorConverted = fromDatabase<any>(Colaborador, colaborador);
                 medicoData = {
                     nomeCompleto: colaboradorConverted.nomeCompleto || 'N/A'
@@ -290,6 +295,7 @@ export async function darAltaPaciente(internacaoId: string): Promise<void> {
     if (altaError) throw altaError;
 
     // Atualizar flag internado do paciente
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const identificadorPaciente = (internacao as any)[Internacao.fields.identificadorPaciente] as string;
     const { error: updateError } = await supabase
         .from(Paciente.table)

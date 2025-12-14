@@ -4,7 +4,6 @@ import {
     Typography,
     IconButton,
     Tooltip,
-    Avatar,
     Chip,
     Dialog,
     DialogTitle,

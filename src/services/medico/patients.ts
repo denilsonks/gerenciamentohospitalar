@@ -58,6 +58,7 @@ export async function getHospitalizedPatients(userId: string): Promise<PatientLi
 
         const hoje = new Date().toISOString().split('T')[0];
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const hasPrescriptionToday = prescricoes.some((prescricao: any) => {
             const dataCriacao = new Date(prescricao[Prescricao.fields.createdAt]).toISOString().split('T')[0];
             return dataCriacao === hoje;

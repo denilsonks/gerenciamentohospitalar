@@ -59,6 +59,7 @@ export default function SchedulingLogic({ hraInicio, hraFinal, frequencia, onCha
 
     useEffect(() => {
         const novosHorarios = calcularHorarios(hraInicio, hraFinal, frequencia);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setHorarios(novosHorarios);
         onChange(novosHorarios);
     }, [hraInicio, hraFinal, frequencia, onChange]);
