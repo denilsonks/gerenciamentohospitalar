@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, CardContent, Typography, Box, CircularProgress } from '@mui/material';
 import { People as PeopleIcon, EventAvailable as EventIcon, CalendarMonth as CalendarIcon } from '@mui/icons-material';
 import { getDashboardMetrics } from '@/services/medico/dashboard';
